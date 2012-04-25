@@ -1,0 +1,10 @@
+<div id="logo_image">
+  <%= image_tag "brewfish_logo.png" %>
+</div>
+<div id='logo'>
+  <%= link_to Refinery::Core.site_name, refinery.root_path %>
+  <%= render(:partial => "/refinery/menu", :locals => {
+             :dom_id => 'menu',
+             :css => 'menu'
+           }) %>
+</div>
