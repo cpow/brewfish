@@ -1,0 +1,29 @@
+fr:
+  refinery:
+    plugins:
+      players:
+        title: Players
+    players:
+      admin:
+        players:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Player
+            reorder: Réordonner les Players
+            reorder_done: Fin de réordonnancement des Players
+          records:
+            title: Players
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Player. Cliquer sur "Créer un(e) nouve(au/l/lle) Player" pour créer votre premi(er/ère) player.'
+          player:
+            view_live_html: Voir ce(t/tte) player <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) player
+            delete: Supprimer définitivement ce(t/tte) player
+      players:
+        show:
+          other: Autres Players
+  activerecord:
+    attributes:
+      'refinery/players/player':
+        bio: Bio
+        photo: Photo
+        name: Name

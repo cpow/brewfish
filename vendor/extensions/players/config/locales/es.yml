@@ -1,0 +1,30 @@
+es:
+  refinery:
+    plugins:
+      players:
+        title: Players
+#        article: masculino/femenino
+    players:
+      admin:
+        players:
+          actions:
+            create_new: Crear nuevo player
+            reorder: Reordenar players
+            reorder_done: Reordenación de players completada
+          records:
+            title: Players
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay players todavía. Pulsa en "Crear nuevo Player" para crear tu primer player.
+          player:
+            view_live_html: Ver este player como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este player
+            delete: Borrar este player para siempre
+      players:
+        show:
+          other: Otros players
+  activerecord:
+    attributes:
+      'refinery/players/player':
+        bio: Bio
+        photo: Photo
+        name: Name

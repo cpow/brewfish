@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::Players::Admin::PlayersController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.players_admin_players_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_players_admin_player_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Players::Admin::PlayersController.sortable? && ::Refinery::Players::Player.any? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Players"),
+                 refinery.players_admin_players_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Players"),
+                 refinery.players_admin_players_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

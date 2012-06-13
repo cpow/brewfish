@@ -1,0 +1,29 @@
+nb:
+  refinery:
+    plugins:
+      players:
+        title: Players
+    players:
+      admin:
+        players:
+          actions:
+            create_new: Lag en ny Player
+            reorder: Endre rekkefølgen på Players
+            reorder_done: Ferdig å endre rekkefølgen Players
+          records:
+            title: Players
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Players enda. Klikk på "Lag en ny Player" for å legge til din første player.
+          player:
+            view_live_html: Vis hvordan denne player ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne player
+            delete: Fjern denne player permanent
+      players:
+        show:
+          other: Andre Players
+  activerecord:
+    attributes:
+      'refinery/players/player':
+        bio: Bio
+        photo: Photo
+        name: Name

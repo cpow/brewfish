@@ -1,0 +1,39 @@
+<% content_for :body_content_title do %>
+  <%= @player.name %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  <section>
+    <h1>Bio</h1>
+    <p>
+      <%=raw @player.bio %>
+    </p>
+  </section>
+  <section>
+    <h1>Photo</h1>
+    <p>
+      <%= image_fu @player.photo, nil %>
+    </p>
+  </section>
+  <section>
+    <h1>Name</h1>
+    <p>
+      <%=raw @player.name %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :body_content_right do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="players">
+      <% @players.each do |player| %>
+        <li>
+          <%= link_to player.name, refinery.players_player_path(player) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>
