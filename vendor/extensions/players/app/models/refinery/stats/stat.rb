@@ -3,11 +3,14 @@ module Refinery
     class Stat < Refinery::Core::BaseModel
       self.table_name = 'refinery_stats'      
       belongs_to :player, :class_name => '::Refinery::Players::Player'
+      attr_accessible :player_id, :at_bats, :walks,
+                      :singles, :doubles, :triples,
+                      :home_runs, :position
     
       # def title was created automatically because you didn't specify a string field
       # when you ran the refinery:engine generator. <3 <3 Refinery CMS.
       def title
-        "Override def title in vendor/extensions/stats/app/models/refinery/stats/stat.rb"
+        "Stat_#{self.id}"
       end
               
     end

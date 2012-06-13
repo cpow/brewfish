@@ -2,11 +2,18 @@
   <%= @stat.title %>
 <% end %>
 
+
 <% content_for :body_content_left do %>
   <section>
     <h1>At Bats</h1>
     <p>
       <%=raw @stat.at_bats %>
+    </p>
+  </section>
+  <section>
+    <h1>Player</h1>
+    <p>
+      <%= raw @stat.player.name %>
     </p>
   </section>
   <section>

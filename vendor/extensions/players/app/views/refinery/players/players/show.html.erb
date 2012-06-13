@@ -4,6 +4,18 @@
 
 <% content_for :body_content_left do %>
   <section>
+    <h1>Total At Bats</h1>
+    <p>
+      <%=raw @player.sum_stats(:at_bats) %>
+    </p>
+  </section>
+  <section>
+    <h1>Total Singles</h1>
+    <p>
+      <%=raw @player.sum_stats(:singles) %>
+    </p>
+  </section>
+  <section>
     <h1>Bio</h1>
     <p>
       <%=raw @player.bio %>

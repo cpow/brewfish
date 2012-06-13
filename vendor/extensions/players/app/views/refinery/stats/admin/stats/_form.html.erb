@@ -3,6 +3,10 @@
               :object => @stat,
               :include_object_name => true %>
 
+  <div class='field'>
+    <%= f.label :player %>
+    <%= f.select "player_id", Refinery::Players::Player.all.collect {|p| [p.name, p.id]}, :include_blank => true %>
+  </div>
   
   <div class='field'>
     <%= f.label :at_bats -%>
