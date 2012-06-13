@@ -14,7 +14,15 @@ module Refinery
       def sum_stats(symbol)
         self.stats.to_a.sum(&symbol)
       end
-        
+
+      def batting_average
+        hits = sum_stats(:singles) +
+          sum_stats(:doubles) +
+          sum_stats(:triples) +
+          sum_stats(:home_runs)
+
+        (hits.to_f/sum_stats(:at_bats).to_f).round(3)
+      end
     end
   end
 end
