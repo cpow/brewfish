@@ -1,8 +1,29 @@
 fr:
   refinery:
     plugins:
+      stats:
+        title: Stats
       players:
         title: Players
+    stats:
+      admin:
+        stats:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Stat
+            reorder: Réordonner les Stats
+            reorder_done: Fin de réordonnancement des Stats
+          records:
+            title: Stats
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Stat. Cliquer sur "Créer
+              un(e) nouve(au/l/lle) Stat" pour créer votre premi(er/ère) stat.
+          stat:
+            view_live_html: Voir ce(t/tte) stat <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) stat
+            delete: Supprimer définitivement ce(t/tte) stat
+      stats:
+        show:
+          other: Autres Stats
     players:
       admin:
         players:
@@ -12,8 +33,9 @@ fr:
             reorder_done: Fin de réordonnancement des Players
           records:
             title: Players
-            sorry_no_results: "Désolé ! Aucun résultat."
-            no_items_yet: 'Il n''y a actuellement aucun(e) Player. Cliquer sur "Créer un(e) nouve(au/l/lle) Player" pour créer votre premi(er/ère) player.'
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Player. Cliquer sur "Créer
+              un(e) nouve(au/l/lle) Player" pour créer votre premi(er/ère) player.
           player:
             view_live_html: Voir ce(t/tte) player <br/><em>(Ouvre une nouvelle fenêtre)</em>
             edit: Modifier ce(t/tte) player
@@ -23,7 +45,14 @@ fr:
           other: Autres Players
   activerecord:
     attributes:
-      'refinery/players/player':
+      refinery/stats/stat:
+        at_bats: At Bats
+        walks: Walks
+        singles: Singles
+        doubles: Doubles
+        triples: Triples
+        home_runs: Home Runs
+      refinery/players/player:
         bio: Bio
         photo: Photo
         name: Name

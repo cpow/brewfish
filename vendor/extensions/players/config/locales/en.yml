@@ -1,8 +1,29 @@
 en:
   refinery:
     plugins:
+      stats:
+        title: Stats
       players:
         title: Players
+    stats:
+      admin:
+        stats:
+          actions:
+            create_new: Add New Stat
+            reorder: Reorder Stats
+            reorder_done: Done Reordering Stats
+          records:
+            title: Stats
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Stats yet. Click "Add New Stat" to add your
+              first stat.
+          stat:
+            view_live_html: View this stat live <br/><em>(opens in a new window)</em>
+            edit: Edit this stat
+            delete: Remove this stat forever
+      stats:
+        show:
+          other: Other Stats
     players:
       admin:
         players:
@@ -13,7 +34,8 @@ en:
           records:
             title: Players
             sorry_no_results: Sorry! There are no results found.
-            no_items_yet: There are no Players yet. Click "Add New Player" to add your first player.
+            no_items_yet: There are no Players yet. Click "Add New Player" to add
+              your first player.
           player:
             view_live_html: View this player live <br/><em>(opens in a new window)</em>
             edit: Edit this player
@@ -23,7 +45,14 @@ en:
           other: Other Players
   activerecord:
     attributes:
-      'refinery/players/player':
+      refinery/stats/stat:
+        at_bats: At Bats
+        walks: Walks
+        singles: Singles
+        doubles: Doubles
+        triples: Triples
+        home_runs: Home Runs
+      refinery/players/player:
         bio: Bio
         photo: Photo
         name: Name

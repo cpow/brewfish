@@ -1,0 +1,57 @@
+<% content_for :body_content_title do %>
+  <%= @stat.title %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  <section>
+    <h1>At Bats</h1>
+    <p>
+      <%=raw @stat.at_bats %>
+    </p>
+  </section>
+  <section>
+    <h1>Walks</h1>
+    <p>
+      <%=raw @stat.walks %>
+    </p>
+  </section>
+  <section>
+    <h1>Singles</h1>
+    <p>
+      <%=raw @stat.singles %>
+    </p>
+  </section>
+  <section>
+    <h1>Doubles</h1>
+    <p>
+      <%=raw @stat.doubles %>
+    </p>
+  </section>
+  <section>
+    <h1>Triples</h1>
+    <p>
+      <%=raw @stat.triples %>
+    </p>
+  </section>
+  <section>
+    <h1>Home Runs</h1>
+    <p>
+      <%=raw @stat.home_runs %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :body_content_right do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="stats">
+      <% @stats.each do |stat| %>
+        <li>
+          <%= link_to stat.title, refinery.stats_stat_path(stat) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

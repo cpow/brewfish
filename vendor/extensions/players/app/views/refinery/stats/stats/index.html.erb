@@ -1,0 +1,11 @@
+<% content_for :body_content_left do %>
+  <ul id="stats">
+    <% @stats.each do |stat| %>
+      <li>
+        <%= link_to stat, refinery.stats_stat_path(stat) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

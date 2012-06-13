@@ -1,0 +1,47 @@
+<%= form_for [refinery, :stats_admin, @stat] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @stat,
+              :include_object_name => true %>
+
+  
+  <div class='field'>
+    <%= f.label :at_bats -%>
+    <%= f.number_field :at_bats  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :walks -%>
+    <%= f.number_field :walks  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :singles -%>
+    <%= f.number_field :singles  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :doubles -%>
+    <%= f.number_field :doubles  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :triples -%>
+    <%= f.number_field :triples  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :home_runs -%>
+    <%= f.number_field :home_runs  -%>
+
+  </div>
+  
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.stats.admin.stats.stat'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete') %>
+<% end -%>

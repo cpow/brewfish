@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120613030252) do
+ActiveRecord::Schema.define(:version => 20120613030652) do
 
   create_table "refinery_blog_categories", :force => true do |t|
     t.string   "title"
@@ -182,6 +182,18 @@ ActiveRecord::Schema.define(:version => 20120613030252) do
   end
 
   add_index "refinery_settings", ["name"], :name => "index_refinery_settings_on_name"
+
+  create_table "refinery_stats", :force => true do |t|
+    t.integer  "at_bats"
+    t.integer  "walks"
+    t.integer  "singles"
+    t.integer  "doubles"
+    t.integer  "triples"
+    t.integer  "home_runs"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "refinery_user_plugins", :force => true do |t|
     t.integer "user_id"

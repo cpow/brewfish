@@ -16,4 +16,21 @@ Refinery::Core::Engine.routes.append do
     end
   end
 
+
+  # Frontend routes
+  namespace :stats do
+    resources :stats, :path => '', :only => [:index, :show]
+  end
+
+  # Admin routes
+  namespace :stats, :path => '' do
+    namespace :admin, :path => 'refinery' do
+      resources :stats, :except => :show do
+        collection do
+          post :update_positions
+        end
+      end
+    end
+  end
+
 end
