@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::Games::Admin::GamesController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.games_admin_games_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_games_admin_game_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Games::Admin::GamesController.sortable? && ::Refinery::Games::Game.any? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Games"),
+                 refinery.games_admin_games_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Games"),
+                 refinery.games_admin_games_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>
