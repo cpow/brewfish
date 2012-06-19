@@ -1,10 +1,54 @@
 nl:
   refinery:
     plugins:
+      games:
+        title: Games
+      seasons:
+        title: Seasons
       stats:
         title: Stats
       players:
         title: Players
+    games:
+      admin:
+        games:
+          actions:
+            create_new: Maak een nieuwe Game
+            reorder: Wijzig de volgorde van de Games
+            reorder_done: Klaar met het wijzingen van de volgorde van de Games
+          records:
+            title: Games
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Games. Druk op 'Maak een nieuwe Game' om
+              de eerste aan te maken.
+          game:
+            view_live_html: Bekijk deze game op de website <br/><em>(opent een nieuw
+              venster)</em>
+            edit: Bewerk deze game
+            delete: Verwijder deze game voor eeuwig
+      games:
+        show:
+          other: Andere Games
+    seasons:
+      admin:
+        seasons:
+          actions:
+            create_new: Maak een nieuwe Season
+            reorder: Wijzig de volgorde van de Seasons
+            reorder_done: Klaar met het wijzingen van de volgorde van de Seasons
+          records:
+            title: Seasons
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Seasons. Druk op 'Maak een nieuwe Season'
+              om de eerste aan te maken.
+          season:
+            view_live_html: Bekijk deze season op de website <br/><em>(opent een nieuw
+              venster)</em>
+            edit: Bewerk deze season
+            delete: Verwijder deze season voor eeuwig
+      seasons:
+        show:
+          other: Andere Seasons
     stats:
       admin:
         stats:
@@ -47,6 +91,11 @@ nl:
           other: Andere Players
   activerecord:
     attributes:
+      refinery/games/game:
+        date: Date
+        opponent: Opponent
+      refinery/seasons/season:
+        year: Year
       refinery/stats/stat:
         at_bats: At Bats
         walks: Walks

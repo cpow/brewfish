@@ -10,8 +10,8 @@ module Refinery
       append_file 'db/seeds.rb', :verbose => true do
         <<-EOH
 
-# Added by Refinery CMS Stats extension
-Refinery::Stats::Engine.load_seed
+# Added by Refinery CMS Games extension
+Refinery::Games::Engine.load_seed
         EOH
       end
     end

@@ -1,10 +1,54 @@
 es:
   refinery:
     plugins:
+      games:
+        title: Games
+      seasons:
+        title: Seasons
       stats:
         title: Stats
       players:
         title: Players
+    games:
+      admin:
+        games:
+          actions:
+            create_new: Crear nuevo game
+            reorder: Reordenar games
+            reorder_done: Reordenación de games completada
+          records:
+            title: Games
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay games todavía. Pulsa en "Crear nuevo Game" para crear
+              tu primer game.
+          game:
+            view_live_html: Ver este game como abierto al público <br/><em>(abre en
+              ventana nueva)</em>
+            edit: Editar este game
+            delete: Borrar este game para siempre
+      games:
+        show:
+          other: Otros games
+    seasons:
+      admin:
+        seasons:
+          actions:
+            create_new: Crear nuevo season
+            reorder: Reordenar seasons
+            reorder_done: Reordenación de seasons completada
+          records:
+            title: Seasons
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay seasons todavía. Pulsa en "Crear nuevo Season" para
+              crear tu primer season.
+          season:
+            view_live_html: Ver este season como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este season
+            delete: Borrar este season para siempre
+      seasons:
+        show:
+          other: Otros seasons
     stats:
       admin:
         stats:
@@ -47,6 +91,11 @@ es:
           other: Otros players
   activerecord:
     attributes:
+      refinery/games/game:
+        date: Date
+        opponent: Opponent
+      refinery/seasons/season:
+        year: Year
       refinery/stats/stat:
         at_bats: At Bats
         walks: Walks

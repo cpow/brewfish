@@ -1,10 +1,52 @@
 en:
   refinery:
     plugins:
+      games:
+        title: Games
+      seasons:
+        title: Seasons
       stats:
         title: Stats
       players:
         title: Players
+    games:
+      admin:
+        games:
+          actions:
+            create_new: Add New Game
+            reorder: Reorder Games
+            reorder_done: Done Reordering Games
+          records:
+            title: Games
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Games yet. Click "Add New Game" to add your
+              first game.
+          game:
+            view_live_html: View this game live <br/><em>(opens in a new window)</em>
+            edit: Edit this game
+            delete: Remove this game forever
+      games:
+        show:
+          other: Other Games
+    seasons:
+      admin:
+        seasons:
+          actions:
+            create_new: Add New Season
+            reorder: Reorder Seasons
+            reorder_done: Done Reordering Seasons
+          records:
+            title: Seasons
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Seasons yet. Click "Add New Season" to add
+              your first season.
+          season:
+            view_live_html: View this season live <br/><em>(opens in a new window)</em>
+            edit: Edit this season
+            delete: Remove this season forever
+      seasons:
+        show:
+          other: Other Seasons
     stats:
       admin:
         stats:
@@ -45,6 +87,11 @@ en:
           other: Other Players
   activerecord:
     attributes:
+      refinery/games/game:
+        date: Date
+        opponent: Opponent
+      refinery/seasons/season:
+        year: Year
       refinery/stats/stat:
         at_bats: At Bats
         walks: Walks

@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.name              = 'refinerycms-players'
   s.version           = '1.0'
   s.description       = 'Ruby on Rails Players extension for Refinery CMS'
-  s.date              = '2012-06-12'
+  s.date              = '2012-06-19'
   s.summary           = 'Players extension for Refinery CMS'
   s.require_paths     = %w(lib)
   s.files             = Dir["{app,config,db,lib}/**/*"] + ["readme.md"]

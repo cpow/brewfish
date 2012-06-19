@@ -17,3 +17,9 @@ Refinery::Players::Engine.load_seed
 
 # Added by Refinery CMS Stats extension
 Refinery::Stats::Engine.load_seed
+
+# Added by Refinery CMS Seasons extension
+Refinery::Seasons::Engine.load_seed
+
+# Added by Refinery CMS Games extension
+Refinery::Games::Engine.load_seed
