@@ -1,8 +1,9 @@
 module Refinery
   module Players
     class Player < Refinery::Core::BaseModel
-      self.table_name = 'refinery_players'      
-      has_many :stats, :class_name => '::Refinery::Stats::Stat' 
+      self.table_name = 'refinery_players'
+      has_many :stats, :class_name => '::Refinery::Stats::Stat'
+      belongs_to :game, :class_name => '::Refinery::Players::Player'
       attr_accessible :bio, :photo_id, :position, :name
       acts_as_indexed :fields => [:bio, :name]
 
