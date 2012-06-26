@@ -6,6 +6,10 @@ module Refinery
         crudify :'refinery/games/game',
                 :title_attribute => 'opponent', :xhr_paging => true
 
+        def create
+          binding.pry
+        end
+
       end
     end
   end

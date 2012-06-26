@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120620012844) do
+ActiveRecord::Schema.define(:version => 20120626041002) do
 
   create_table "refinery_blog_categories", :force => true do |t|
     t.string   "title"
@@ -65,14 +65,22 @@ ActiveRecord::Schema.define(:version => 20120620012844) do
   add_index "refinery_blog_posts", ["id"], :name => "index_refinery_blog_posts_on_id"
   add_index "refinery_blog_posts", ["slug"], :name => "index_refinery_blog_posts_on_slug"
 
+  create_table "refinery_gamed_players", :force => true do |t|
+    t.integer  "player_id"
+    t.integer  "game_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "refinery_games", :force => true do |t|
     t.datetime "date"
     t.string   "opponent"
     t.integer  "position"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.integer  "season_id"
     t.integer  "player_id"
+    t.integer  "gamed_player_id"
   end
 
   create_table "refinery_images", :force => true do |t|
@@ -154,9 +162,11 @@ ActiveRecord::Schema.define(:version => 20120620012844) do
     t.integer  "photo_id"
     t.string   "name"
     t.integer  "position"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.integer  "stat_id"
+    t.integer  "game_id"
+    t.integer  "gamed_player_id"
   end
 
   create_table "refinery_resources", :force => true do |t|

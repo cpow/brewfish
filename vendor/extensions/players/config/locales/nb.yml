@@ -1,6 +1,8 @@
 nb:
   refinery:
     plugins:
+      gamed_players:
+        title: Gamed Players
       games:
         title: Games
       seasons:
@@ -9,6 +11,26 @@ nb:
         title: Stats
       players:
         title: Players
+    gamed_players:
+      admin:
+        gamed_players:
+          actions:
+            create_new: Lag en ny Gamed Player
+            reorder: Endre rekkefølgen på Gamed Players
+            reorder_done: Ferdig å endre rekkefølgen Gamed Players
+          records:
+            title: Gamed Players
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Gamed Players enda. Klikk på "Lag en ny Gamed
+              Player" for å legge til din første gamed player.
+          gamed_player:
+            view_live_html: Vis hvordan denne gamed player ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne gamed player
+            delete: Fjern denne gamed player permanent
+      gamed_players:
+        show:
+          other: Andre Gamed Players
     games:
       admin:
         games:
@@ -91,6 +113,9 @@ nb:
           other: Andre Players
   activerecord:
     attributes:
+      refinery/gamed_players/gamed_player:
+        player_id: Player
+        game_id: Game
       refinery/games/game:
         date: Date
         opponent: Opponent

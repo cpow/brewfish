@@ -1,0 +1,11 @@
+<% content_for :body_content_left do %>
+  <ul id="gamed_players">
+    <% @gamed_players.each do |gamed_player| %>
+      <li>
+        <%= link_to gamed_player, refinery.gamed_players_gamed_player_path(gamed_player) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

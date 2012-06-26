@@ -3,8 +3,9 @@ module Refinery
     class Player < Refinery::Core::BaseModel
       self.table_name = 'refinery_players'
       has_many :stats, :class_name => '::Refinery::Stats::Stat'
-      belongs_to :game, :class_name => '::Refinery::Players::Player'
-      attr_accessible :bio, :photo_id, :position, :name
+      has_many :gamed_players, :class_name => '::Refinery::GamedPlayers::GamedPlayer'
+      has_many :games, :through => :gamed_players, :class_name => '::Refinery::GamedPlayers::GamedPlayer'
+      attr_accessible :bio, :photo_id, :position, :name, :gamed_player_id
       acts_as_indexed :fields => [:bio, :name]
 
       validates :bio, :presence => true, :uniqueness => true

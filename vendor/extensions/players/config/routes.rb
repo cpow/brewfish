@@ -67,4 +67,21 @@ Refinery::Core::Engine.routes.append do
     end
   end
 
+
+  # Frontend routes
+  namespace :gamed_players do
+    resources :gamed_players, :path => '', :only => [:index, :show]
+  end
+
+  # Admin routes
+  namespace :gamed_players, :path => '' do
+    namespace :admin, :path => 'refinery' do
+      resources :gamed_players, :except => :show do
+        collection do
+          post :update_positions
+        end
+      end
+    end
+  end
+
 end

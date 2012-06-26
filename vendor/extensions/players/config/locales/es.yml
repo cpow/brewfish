@@ -1,6 +1,8 @@
 es:
   refinery:
     plugins:
+      gamed_players:
+        title: Gamed Players
       games:
         title: Games
       seasons:
@@ -9,6 +11,26 @@ es:
         title: Stats
       players:
         title: Players
+    gamed_players:
+      admin:
+        gamed_players:
+          actions:
+            create_new: Crear nuevo gamed player
+            reorder: Reordenar gamed players
+            reorder_done: Reordenación de gamed players completada
+          records:
+            title: Gamed Players
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay gamed players todavía. Pulsa en "Crear nuevo Gamed
+              Player" para crear tu primer gamed player.
+          gamed_player:
+            view_live_html: Ver este gamed player como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este gamed player
+            delete: Borrar este gamed player para siempre
+      gamed_players:
+        show:
+          other: Otros gamed players
     games:
       admin:
         games:
@@ -91,6 +113,9 @@ es:
           other: Otros players
   activerecord:
     attributes:
+      refinery/gamed_players/gamed_player:
+        player_id: Player
+        game_id: Game
       refinery/games/game:
         date: Date
         opponent: Opponent

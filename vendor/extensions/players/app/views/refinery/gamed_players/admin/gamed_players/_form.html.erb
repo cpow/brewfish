@@ -1,0 +1,23 @@
+<%= form_for [refinery, :gamed_players_admin, @gamed_player] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @gamed_player,
+              :include_object_name => true %>
+
+  
+  <div class='field'>
+    <%= f.label :player_id -%>
+    <%= f.text_field :player_id, :class => 'larger widest'  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :game_id -%>
+    <%= f.text_field :game_id  -%>
+
+  </div>
+  
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.gamed_players.admin.gamed_players.gamed_player'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete') %>
+<% end -%>

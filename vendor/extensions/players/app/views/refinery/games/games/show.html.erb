@@ -15,6 +15,14 @@
       <%=raw @game.opponent %>
     </p>
   </section>
+
+<section>
+  <h1>Players</h1>
+  <% @game.players.each do |player| %>
+    <% render :partial => 'player', :locals => {player: player}%>
+  <% end %>
+</section>
+  
 <% end %>
 
 <% content_for :body_content_right do %>

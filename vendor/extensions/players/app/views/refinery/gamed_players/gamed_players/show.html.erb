@@ -1,0 +1,33 @@
+<% content_for :body_content_title do %>
+  <%= @gamed_player.title %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  <section>
+    <h1>Player</h1>
+    <p>
+      <%=raw @gamed_player.player_id %>
+    </p>
+  </section>
+  <section>
+    <h1>Game</h1>
+    <p>
+      <%=raw @gamed_player.game_id %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :body_content_right do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="gamed_players">
+      <% @gamed_players.each do |gamed_player| %>
+        <li>
+          <%= link_to gamed_player.title, refinery.gamed_players_gamed_player_path(gamed_player) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

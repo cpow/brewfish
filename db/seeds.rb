@@ -23,3 +23,6 @@ Refinery::Seasons::Engine.load_seed
 
 # Added by Refinery CMS Games extension
 Refinery::Games::Engine.load_seed
+
+# Added by Refinery CMS Gamed Players extension
+Refinery::GamedPlayers::Engine.load_seed
