@@ -5,6 +5,14 @@ module Refinery
       attr_accessible :player_id, :game_id
       belongs_to :player
       belongs_to :game
+
+      def player
+        Refinery::Players::Player.find self.player_id
+      end
+
+      def game
+        Refinery::Games::Game.find self.game_id
+      end
     
       # def title was created automatically because you didn't specify a string field
       # when you ran the refinery:engine generator. <3 <3 Refinery CMS.

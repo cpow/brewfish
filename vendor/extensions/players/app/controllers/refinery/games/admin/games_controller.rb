@@ -7,9 +7,13 @@ module Refinery
                 :title_attribute => 'opponent', :xhr_paging => true
 
         def create
-          binding.pry
+          @game = Refinery::Games::Game.create!(params[:game])
+          if params[:player]
+            params[:player].each_pair do |k,v|
+              Refinery::GamedPlayers::GamedPlayer.create!(player_id: v, game_id: @game.id)
+            end
+          end
         end
-
       end
     end
   end

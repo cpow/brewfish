@@ -18,8 +18,8 @@
     <%= f.text_field :opponent  -%>
   </div>
 
-  <% Refinery::Players::Player.all.each do |player| %>
-    <%= render :partial => 'player_selection', :locals => {player: player, f: f} %>
+  <% Refinery::Players::Player.all.each_with_index do |player, i| %>
+    <%= render :partial => 'player_selection', :locals => {player: player, i: i, f: f} %>
   <% end %>
 
   <%= render '/refinery/admin/form_actions', :f => f,

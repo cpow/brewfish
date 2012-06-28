@@ -1,6 +1,6 @@
 <table>
   <tr>
-    <td><%= f.check_box :player_id %></td>
-    <td><%= f.label :player_id, player.name %></td>
+    <td><%= check_box_tag "player[#{i}]", "#{player.id}" %></td>
+    <td><%= label_tag "player", player.name %></td>
   </tr>
 </table>

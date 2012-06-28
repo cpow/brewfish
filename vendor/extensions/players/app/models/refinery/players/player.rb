@@ -4,12 +4,14 @@ module Refinery
       self.table_name = 'refinery_players'
       has_many :stats, :class_name => '::Refinery::Stats::Stat'
       has_many :gamed_players, :class_name => '::Refinery::GamedPlayers::GamedPlayer'
+
       has_many :games, :through => :gamed_players, :class_name => '::Refinery::GamedPlayers::GamedPlayer'
+      belongs_to :photo, :class_name => '::Refinery::Image'
+
       attr_accessible :bio, :photo_id, :position, :name, :gamed_player_id
       acts_as_indexed :fields => [:bio, :name]
 
       validates :bio, :presence => true, :uniqueness => true
-      belongs_to :photo, :class_name => '::Refinery::Image'
 
       def sum_stats(symbol)
         self.stats.to_a.sum(&symbol)
