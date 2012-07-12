@@ -8,7 +8,7 @@ module Refinery
       acts_as_indexed :fields => [:opponent]
       attr_accessible :position, :date, :season_id, :opponent, :player_id, :gamed_player_id
 
-      validates :opponent, :presence => true, :uniqueness => true
+      validates :opponent, :presence => true
 
     end
   end
