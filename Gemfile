@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'coffee-script'
 
 gem 'rails', '3.2.3'
 gem 'refinerycms-blog', '~> 2.0.0'

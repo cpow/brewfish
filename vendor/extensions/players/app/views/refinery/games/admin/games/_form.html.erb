@@ -18,9 +18,22 @@
     <%= f.text_field :opponent  -%>
   </div>
 
-  <% Refinery::Players::Player.all.each_with_index do |player, i| %>
-    <%= render :partial => 'player_selection', :locals => {player: player, i: i, f: f} %>
-  <% end %>
+  <table>
+    <thead>
+      <th>Player Name</th>
+      <th>At Bats</th>
+      <th>Walks</th>
+      <th>Singles</th>
+      <th>Doubles</th>
+      <th>Triples</th>
+      <th>Home Runs</th>
+    </thead>
+    <tbody>
+      <% Refinery::Players::Player.all.each_with_index do |player, i| %>
+        <%= render :partial => 'player_selection', :locals => {player: player, i: i, f: f} %>
+      <% end %>
+    </tbody>
+  </table>
 
   <%= render '/refinery/admin/form_actions', :f => f,
              :continue_editing => false,

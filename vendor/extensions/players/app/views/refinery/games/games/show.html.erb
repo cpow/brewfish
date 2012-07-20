@@ -18,7 +18,7 @@
   <section>
     <h1>Players</h1>
     <% @game.players.each do |gamed_player| %>
-      <%= render :partial => 'gamed_player', :locals => {:gamed_player => gamed_player}%>
+      <%= render :partial => 'gamed_player', :locals => {:player => gamed_player}%>
     <% end %>
   </section>
   

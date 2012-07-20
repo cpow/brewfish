@@ -1,6 +1,11 @@
-<table>
-  <tr>
-    <td><%= check_box_tag "player[#{i}]", "#{player.id}" %></td>
-    <td><%= label_tag "player[#{i}]", player.name %></td>
-  </tr>
-</table>
+<tr>
+  <td><%= hidden_field_tag "player[#{i}][stats][player_id]", "#{player.id}" %></td>
+  <td><%= check_box_tag "player[#{i}][id]", "#{player.id}" %></td>
+  <td><%= label_tag "player[#{i}][id]", player.name %></td>
+  <td><%= text_field_tag "player[#{i}][stats][at_bats]" %></td>
+  <td><%= text_field_tag "player[#{i}][stats][walks]" %></td>
+  <td><%= text_field_tag "player[#{i}][stats][singles]" %></td>
+  <td><%= text_field_tag "player[#{i}][stats][doubles]" %></td>
+  <td><%= text_field_tag "player[#{i}][stats][triples]" %></td>
+  <td><%= text_field_tag "player[#{i}][stats][home_runs]" %></td>
+</tr>
