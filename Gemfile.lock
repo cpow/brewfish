@@ -91,6 +91,9 @@ GEM
       coderay (~> 1.0.5)
       method_source (~> 0.7.1)
       slop (>= 2.4.4, < 3)
+    pry-remote (0.1.5)
+      pry (~> 0.9.9)
+      slop (~> 2.1)
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -208,6 +211,7 @@ DEPENDENCIES
   coffee-script
   jquery-rails
   pry
+  pry-remote
   rails (= 3.2.3)
   refinerycms (~> 2.0.0)
   refinerycms-blog (~> 2.0.0)

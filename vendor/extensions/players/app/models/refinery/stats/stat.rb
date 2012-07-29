@@ -7,6 +7,7 @@ module Refinery
       attr_accessible :player_id, :game_id, :at_bats, :walks,
                       :singles, :doubles, :triples,
                       :home_runs, :position
+      validates :player_id, :at_bats, :walks, :singles, :doubles, :triples, :home_runs, :presence => true
     
       # def title was created automatically because you didn't specify a string field
       # when you ran the refinery:engine generator. <3 <3 Refinery CMS.
@@ -27,7 +28,17 @@ module Refinery
         stat.save!
         return stat
       end
-              
+
+      def self.check_errors(params_hash)
+        errors_hash = []
+        params_hash[:player].each_pair do |k,v|
+          stat = Refinery::Stats::Stat.new(v[:stats])
+          unless stat.valid? 
+            errors_hash << stat.errors.full_messages
+            return errors_hash
+          end
+        end
+      end
     end
   end
 end

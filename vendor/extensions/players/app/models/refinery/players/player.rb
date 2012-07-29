@@ -25,6 +25,16 @@ module Refinery
 
         (hits.to_f/sum_stats(:at_bats).to_f).round(3)
       end
+
+      def self.check_errors(params_hash)
+        errors_array = []
+        player_ids = []
+        params_hash[:player].each_pair do |k,v|
+          player_ids << "true" if v[:id]
+        end
+        errors_array << "Please add players" if player_ids.blank?
+        return errors_array
+      end
     end
   end
 end
