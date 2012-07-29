@@ -27,6 +27,7 @@ doc/app
 .yardoc
 .yardopts
 coverage
+.powrc
 
 # Public Uploads
 public/system/*
