@@ -10,7 +10,6 @@ module Refinery
           @game = Refinery::Games::Game.create!(params[:game])
           if params[:player]
             params[:player].each_pair do |k,v|
-              binding.pry
               Refinery::GamedPlayers::GamedPlayer.create!(player_id: v[:id].to_i, game_id: @game.id)
               Refinery::Stats::Stat.new_item(v[:stats], @game.id)
             end

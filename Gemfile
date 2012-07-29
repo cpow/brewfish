@@ -10,6 +10,7 @@ gem 'refinerycms-blog', '~> 2.0.0'
 group :development, :test do
   gem 'sqlite3'
   gem 'pry'
+  gem 'pry-remote'
 end
 
 
