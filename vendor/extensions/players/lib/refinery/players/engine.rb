@@ -18,10 +18,6 @@ module Refinery
           
         end
       end
-
-      config.after_initialize do
-        Refinery.register_extension(Refinery::Players)
-      end
     end
   end
 end

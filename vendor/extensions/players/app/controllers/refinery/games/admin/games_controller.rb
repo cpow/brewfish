@@ -19,17 +19,20 @@ module Refinery
         end
 
         def create
-          flash[:errors] = []
+          errors = []
           @game = Refinery::Games::Game.new(params[:game])
-          flash[:errors] << @game.errors.full_message unless @game.valid?
-          flash[:errors] << Refinery::Players::Player.check_errors(params)
-          flash[:errors] << Refinery::Stats::Stat.check_errors(params)
-          return redirect_to refinery.new_games_admin_game_path unless flash[:errors].blank?
+          errors << @game.errors.full_messages unless @game.valid?
+          errors << Refinery::Players::Player.check_errors(params) unless Refinery::Players::Player.check_errors(params).blank?
+          errors << Refinery::Stats::Stat.check_errors(params) unless Refinery::Stats::Stat.check_errors(params).blank?
+          flash[:error] = errors.join("\n") unless errors.blank?
+          return redirect_to refinery.new_games_admin_game_path unless errors.blank?
 
           @game.save
           params[:player].each_pair do |k,v|
-            Refinery::GamedPlayers::GamedPlayer.create(player_id: v[:id].to_i, game_id: @game.id)
-            Refinery::Stats::Stat.new_item(v[:stats], @game.id)
+            if v[:id]
+              Refinery::GamedPlayers::GamedPlayer.create(player_id: v[:id].to_i, game_id: @game.id)
+              Refinery::Stats::Stat.new_item(v[:stats], @game.id)
+            end
           end
           redirect_to refinery.games_admin_games_path
         end

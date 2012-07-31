@@ -4,8 +4,8 @@ module Refinery
       self.table_name = 'refinery_players'
       has_many :stats, :class_name => '::Refinery::Stats::Stat'
       has_many :gamed_players, :class_name => '::Refinery::GamedPlayers::GamedPlayer'
+      has_many :games, :through => :gamed_players, :class_name => '::Refinery::Games::Game', :foreign_key => :game_id
 
-      has_many :games, :through => :gamed_players, :class_name => '::Refinery::GamedPlayers::GamedPlayer'
       belongs_to :photo, :class_name => '::Refinery::Image'
 
       attr_accessible :bio, :photo_id, :position, :name, :gamed_player_id
@@ -32,8 +32,11 @@ module Refinery
         params_hash[:player].each_pair do |k,v|
           player_ids << "true" if v[:id]
         end
-        errors_array << "Please add players" if player_ids.blank?
-        return errors_array
+        if player_ids.blank?
+          errors_array << "Please add players" 
+          return errors_array
+        end
+        return nil
       end
     end
   end

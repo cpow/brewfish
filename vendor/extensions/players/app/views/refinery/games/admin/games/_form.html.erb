@@ -3,6 +3,8 @@
               :object => @game,
               :include_object_name => true %>
 
+  <div id="admin_game_errors"></div>
+
   <div class='field'>
     <%= f.label :season -%>
     <%= f.select "season_id", Refinery::Seasons::Season.all.collect {|s| [s.name, s.id]}, :prompt => "Select Season"  -%>
