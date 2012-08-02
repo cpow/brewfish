@@ -8,7 +8,8 @@ module Refinery
 
       belongs_to :photo, :class_name => '::Refinery::Image'
 
-      attr_accessible :bio, :photo_id, :position, :name, :gamed_player_id
+      attr_accessible :bio, :photo_id, :position, :name, :gamed_player_id, :stat
+      attr_accessor :stat
       acts_as_indexed :fields => [:bio, :name]
 
       validates :bio, :presence => true, :uniqueness => true
@@ -37,6 +38,16 @@ module Refinery
           return errors_array
         end
         return nil
+      end
+
+      def self.add_stats(params_hash)
+        player_array = []
+        params_hash[:player].each_pair do |k,v|
+          player = Refinery::Players::Player.find(v[:stats][:player_id])
+          player.stat = Refinery::Stats::Stat.new_item(v[:stats]) if v[:id]
+          player_array << player
+        end
+        return player_array
       end
     end
   end

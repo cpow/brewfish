@@ -15,8 +15,8 @@ module Refinery
         "Stat_#{self.id}"
       end
 
-      def self.new_item(stat_hash, game_id)
-        stat = Refinery::Stats::Stat.new(
+      def self.new_item(stat_hash, game_id=1)
+        Refinery::Stats::Stat.new(
           player_id: stat_hash[:player_id],
           game_id: game_id,
           at_bats: stat_hash[:at_bats],
@@ -25,8 +25,6 @@ module Refinery
           doubles: stat_hash[:doubles],
           triples: stat_hash[:triples],
           home_runs: stat_hash[:home_runs])
-        stat.save!
-        return stat
       end
 
       def self.check_errors(params_hash)

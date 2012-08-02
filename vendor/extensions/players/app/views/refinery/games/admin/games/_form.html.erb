@@ -20,8 +20,10 @@
     <%= f.text_field :opponent  -%>
   </div>
 
-  <table>
+  <table id="player_select">
     <thead>
+      <th></th>
+      <th></th>
       <th>Player Name</th>
       <th>At Bats</th>
       <th>Walks</th>
@@ -31,8 +33,8 @@
       <th>Home Runs</th>
     </thead>
     <tbody>
-      <% Refinery::Players::Player.all.each_with_index do |player, i| %>
-        <%= render :partial => 'player_selection', :locals => {player: player, i: i, f: f} %>
+      <% players.each do |player| %>
+        <%= render :partial => 'player_selection', :locals => {player: player, i: player.id, f: f} %>
       <% end %>
     </tbody>
   </table>

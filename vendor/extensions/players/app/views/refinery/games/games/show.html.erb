@@ -17,9 +17,22 @@
   </section>
   <section>
     <h1>Players</h1>
-    <% @game.players.each do |gamed_player| %>
-      <%= render :partial => 'gamed_player', :locals => {:player => gamed_player}%>
-    <% end %>
+    <table id="player_select">
+    <thead>
+      <th>Name</th>
+      <th>At Bats</th>
+      <th>Walks</th>
+      <th>Singles</th>
+      <th>Doubles</th>
+      <th>Triples</th>
+      <th>Home Runs</th>
+    </thead>
+    <tbody>
+      <% @game.players.each do |player| %>
+        <%= render :partial => 'player_stats', :locals => {player: player, stats: player.stats.where(game_id: @game.id).first} %>
+      <% end %>
+    </tbody>
+  </table>
   </section>
   
 <% end %>
