@@ -27,6 +27,10 @@ module Refinery
           home_runs: stat_hash[:home_runs])
       end
 
+      def something
+        something
+      end
+
       def self.check_errors(params_hash)
         errors_hash = []
         params_hash[:player].each_pair do |k,v|
