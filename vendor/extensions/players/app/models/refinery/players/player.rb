@@ -49,6 +49,10 @@ module Refinery
         end
         return player_array
       end
+
+      def title
+        "Players"
+      end
     end
   end
 end

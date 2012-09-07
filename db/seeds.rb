@@ -6,23 +6,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# Added by Refinery CMS Pages extension
-Refinery::Pages::Engine.load_seed
-
-# Added by Refinery CMS Blog engine
-Refinery::Blog::Engine.load_seed
-
 # Added by Refinery CMS Players extension
 Refinery::Players::Engine.load_seed
-
-# Added by Refinery CMS Stats extension
 Refinery::Stats::Engine.load_seed
-
-# Added by Refinery CMS Seasons extension
-Refinery::Seasons::Engine.load_seed
-
-# Added by Refinery CMS Games extension
 Refinery::Games::Engine.load_seed
-
-# Added by Refinery CMS Gamed Players extension
+Refinery::Seasons::Engine.load_seed
+# Added by Refinery CMS Players extension
+Refinery::Players::Engine.load_seed
+Refinery::Stats::Engine.load_seed
+Refinery::Games::Engine.load_seed
+Refinery::Seasons::Engine.load_seed
 Refinery::GamedPlayers::Engine.load_seed

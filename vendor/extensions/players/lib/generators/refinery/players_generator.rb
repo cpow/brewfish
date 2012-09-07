@@ -9,8 +9,11 @@ module Refinery
       create_file 'db/seeds.rb' unless File.exists?(File.join(destination_root, 'db', 'seeds.rb'))
       append_file 'db/seeds.rb', :verbose => true do
         <<-EOH
-
-# Added by Refinery CMS Gamed Players extension
+# Added by Refinery CMS Players extension
+Refinery::Players::Engine.load_seed
+Refinery::Stats::Engine.load_seed
+Refinery::Games::Engine.load_seed
+Refinery::Seasons::Engine.load_seed
 Refinery::GamedPlayers::Engine.load_seed
         EOH
       end
