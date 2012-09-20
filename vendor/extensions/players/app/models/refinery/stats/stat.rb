@@ -6,8 +6,8 @@ module Refinery
       belongs_to :game, :class_name => '::Refinery::Games::Game'
       attr_accessible :hits, :player_id, :game_id, :at_bats, :walks,
                       :singles, :doubles, :triples,
-                      :home_runs, :position
-      validates :hits, :at_bats, :walks, :singles, :doubles, :triples, :home_runs, :presence => true, :if => :player_id
+                      :home_runs, :position, :runs
+      validates :hits, :at_bats, :walks, :runs, :singles, :doubles, :triples, :home_runs, :presence => true, :if => :player_id
     
       # def title was created automatically because you didn't specify a string field
       # when you ran the refinery:engine generator. <3 <3 Refinery CMS.
@@ -20,6 +20,7 @@ module Refinery
           player_id: stat_hash[:player_id],
           game_id: game_id,
           hits: stat_hash[:hits],
+          runs: stat_hash[:runs],
           at_bats: stat_hash[:at_bats],
           walks: stat_hash[:walks],
           singles: stat_hash[:singles],
