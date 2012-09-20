@@ -4,10 +4,10 @@ module Refinery
       self.table_name = 'refinery_stats'      
       belongs_to :player, :class_name => '::Refinery::Players::Player'
       belongs_to :game, :class_name => '::Refinery::Games::Game'
-      attr_accessible :player_id, :game_id, :at_bats, :walks,
+      attr_accessible :hits, :player_id, :game_id, :at_bats, :walks,
                       :singles, :doubles, :triples,
                       :home_runs, :position
-      validates :at_bats, :walks, :singles, :doubles, :triples, :home_runs, :presence => true, :if => :player_id
+      validates :hits, :at_bats, :walks, :singles, :doubles, :triples, :home_runs, :presence => true, :if => :player_id
     
       # def title was created automatically because you didn't specify a string field
       # when you ran the refinery:engine generator. <3 <3 Refinery CMS.
@@ -19,6 +19,7 @@ module Refinery
         Refinery::Stats::Stat.new(
           player_id: stat_hash[:player_id],
           game_id: game_id,
+          hits: stat_hash[:hits],
           at_bats: stat_hash[:at_bats],
           walks: stat_hash[:walks],
           singles: stat_hash[:singles],

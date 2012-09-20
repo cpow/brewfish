@@ -3,6 +3,7 @@
   <td><%= check_box_tag "player[#{i}][id]", player.id, (true if player.stat) %></td>
   <td><%= label_tag "player[#{i}][id]", player.name %></td>
   <td><%= text_field_tag "player[#{i}][stats][at_bats]", (player.stat.at_bats if player.stat) %></td>
+  <td><%= text_field_tag "player[#{i}][stats][hits]", (player.stat.hits if player.stat) %></td>
   <td><%= text_field_tag "player[#{i}][stats][walks]", (player.stat.walks if player.stat) %></td>
   <td><%= text_field_tag "player[#{i}][stats][singles]", (player.stat.singles if player.stat) %></td>
   <td><%= text_field_tag "player[#{i}][stats][doubles]", (player.stat.doubles if player.stat) %></td>

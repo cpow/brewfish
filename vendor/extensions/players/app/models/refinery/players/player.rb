@@ -12,7 +12,7 @@ module Refinery
       attr_accessor :stat
       acts_as_indexed :fields => [:bio, :name]
 
-      validates :bio, :presence => true, :uniqueness => true
+      validates :bio, :presence => true
 
       def sum_stats(symbol)
         self.stats.to_a.sum(&symbol)
