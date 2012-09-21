@@ -1,3 +1,7 @@
+<% content_for :head do -%>
+  <%= stylesheet_link_tag 'layout' %>
+<% end -%>
+
 <tr>
   <td><%= hidden_field_tag "player[#{i}][stats][player_id]", "#{player.id}" %></td>
   <td><%= check_box_tag "player[#{i}][id]", player.id, (true if player.stat) %></td>
