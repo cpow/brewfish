@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120920031921) do
+ActiveRecord::Schema.define(:version => 20120921020135) do
 
   create_table "refinery_blog_categories", :force => true do |t|
     t.string   "title"
@@ -225,6 +225,7 @@ ActiveRecord::Schema.define(:version => 20120920031921) do
     t.integer  "game_id"
     t.integer  "hits"
     t.integer  "runs"
+    t.integer  "rbis"
   end
 
   create_table "refinery_user_plugins", :force => true do |t|

@@ -1,9 +1,5 @@
 require 'csv'
 namespace :import do
-  desc "hello rake task"
-  task :hello do
-    puts "hello"
-  end
 
   desc  "import stats from file"
   task :csv_file => :environment do
@@ -23,6 +19,7 @@ namespace :import do
       Refinery::Stats::Stat.create!(player_id: player.id,
                                     game_id: game.id,
                                     walks: data["Walks"],
+                                    rbis: data["RBI"],
                                     hits: data["Hits"],
                                     runs: data["Runs"],
                                     at_bats: data["At Bats"],

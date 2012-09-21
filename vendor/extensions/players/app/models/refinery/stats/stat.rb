@@ -19,6 +19,7 @@ module Refinery
         Refinery::Stats::Stat.new(
           player_id: stat_hash[:player_id],
           game_id: game_id,
+          rbis: stat_hash[:rbis]
           hits: stat_hash[:hits],
           runs: stat_hash[:runs],
           at_bats: stat_hash[:at_bats],

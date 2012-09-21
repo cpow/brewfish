@@ -6,10 +6,11 @@
   <td><%= hidden_field_tag "player[#{i}][stats][player_id]", "#{player.id}" %></td>
   <td><%= check_box_tag "player[#{i}][id]", player.id, (true if player.stat) %></td>
   <td><%= label_tag "player[#{i}][id]", player.name %></td>
-  <td><%= text_field_tag "player[#{i}][stats][at_bats]", (player.stat.at_bats if player.stat) %></td>
+  <td><%= text_field_tag "player[#{i}][stats][at_bats]", (player.stat.at_bats if player.stat), :class => "player_selection" %></td>
   <td><%= text_field_tag "player[#{i}][stats][hits]", (player.stat.hits if player.stat) %></td>
   <td><%= text_field_tag "player[#{i}][stats][walks]", (player.stat.walks if player.stat) %></td>
   <td><%= text_field_tag "player[#{i}][stats][runs]", (player.stat.runs if player.stat) %></td>
+  <td><%= text_field_tag "player[#{i}][stats][rbis]", (player.stat.rbis if player.stat) %></td>
   <td><%= text_field_tag "player[#{i}][stats][singles]", (player.stat.singles if player.stat) %></td>
   <td><%= text_field_tag "player[#{i}][stats][doubles]", (player.stat.doubles if player.stat) %></td>
   <td><%= text_field_tag "player[#{i}][stats][triples]", (player.stat.triples if player.stat) %></td>
