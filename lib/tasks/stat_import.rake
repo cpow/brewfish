@@ -11,7 +11,7 @@ namespace :import do
     game = Refinery::Games::Game.create!(opponent: "data import #{Time.zone.now}",
                                          season_id: season.id)
 
-    CSV.foreach('/Users/cpow/Downloads/brewfish_stats.csv', :headers => true) do |row|
+    CSV.foreach("#{Rails.root}/app/csv/brewfish_stats.csv" :headers => true) do |row|
       data = row.to_hash
       player = Refinery::Players::Player.create!(name: data["Player"],
                                                  bio: "insert bio here (created by import)")
