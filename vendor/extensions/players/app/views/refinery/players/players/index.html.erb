@@ -2,7 +2,17 @@
   <ul id="players">
     <% @players.each do |player| %>
       <li>
-        <%= link_to player.name, refinery.players_player_path(player) %>
+        <ul id="player_thumb">
+          <li>
+            <% if player.photo %>
+              <%= image_tag player.photo %>
+            <% else %>
+              <%= image_tag "empty-profile.gif", :size => "80x80" %>
+            <% end %>
+            <%= link_to player.name, refinery.players_player_path(player) %><li>
+          </li>
+        </ul>
+        
       </li>
     <% end %>
   </ul>

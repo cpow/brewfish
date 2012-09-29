@@ -60,6 +60,13 @@ header {
 }
 
 ul {
+  #player_thumb {
+    padding: 10px;
+    li {
+      display: inline-block;
+      width: 100px;
+    }
+  }
   list-style: none;
   margin: 0;
   li {
