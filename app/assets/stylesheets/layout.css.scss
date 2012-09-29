@@ -4,6 +4,17 @@ body {
   margin: 0;
 }
 
+table {
+  border: 1px solid #CCC;
+  td {
+    text-align: middle;
+  }
+  th {
+    width: 100px;
+    border-bottom: 1px solid #CCC;
+  }
+}
+
 h1, h2, h3 {
   margin-top: 0;
 }

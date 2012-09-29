@@ -1,5 +1,5 @@
 <tr>
-  <td><%= player.name %></td>
+  <td><%= link_to player.name, refinery.players_player_path(player) %></td>
   <td><%= stats.at_bats %><td>
   <td><%= stats.walks %></td>
   <td><%= stats.runs %></td>

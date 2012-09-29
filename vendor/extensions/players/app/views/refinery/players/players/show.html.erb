@@ -1,57 +1,45 @@
-<% content_for :body_content_title do %>
-  <%= @player.name %>
-<% end %>
-
-<% content_for :body_content_left do %>
-  <section>
-    <h1>Average</h1>
-    <p>
-      <%=raw @player.batting_average %>
-    </p>
-  </section>
-  <section>
-    <h1>Total At Bats</h1>
-    <p>
-      <%=raw @player.sum_stats(:at_bats) %>
-    </p>
-  </section>
-  <section>
-    <h1>Total Singles</h1>
-    <p>
-      <%=raw @player.sum_stats(:singles) %>
-    </p>
-  </section>
-  <section>
-    <h1>Bio</h1>
-    <p>
-      <%=raw @player.bio %>
-    </p>
-  </section>
-  <section>
-    <h1>Photo</h1>
-    <p>
-      <%= image_fu @player.photo, nil %>
-    </p>
-  </section>
-  <section>
-    <h1>Name</h1>
-    <p>
-      <%=raw @player.name %>
-    </p>
-  </section>
-<% end %>
-
-<% content_for :body_content_right do %>
-  <aside>
-    <h2><%= t('.other') %></h2>
-    <ul id="players">
-      <% @players.each do |player| %>
-        <li>
-          <%= link_to player.name, refinery.players_player_path(player) %>
-        </li>
+<section id="body_content">
+  <section id="body">
+    <div id="player">
+      <% if @player.photo %>
+        <%= image_fu @player.photo, "400x400", class: "image-align-left" %>
+      <% else %>
+        <%= image_tag "empty-profile.gif", class: "image-align-left" %>
       <% end %>
-    </ul>
-  </aside>
-<% end %>
-
-<%= render '/refinery/content_page' %>
+      <h1><%= @player.name %></h1>
+      <%= raw @player.bio %>
+      <p class="back"><%= link_to "Back to Players", refinery.players_players_path %></p>
+    </div>
+  </section>
+  <section>
+      <h1>Totals:</h1>
+      <table id="player_show_stats">
+        <thead>
+          <th>At Bats</th>
+          <th>Hits</th>
+          <th>Average</th>
+          <th>Walks</th>
+          <th>Singles</th>
+          <th>Doubles</th>
+          <th>Triples</th>
+          <th>Home Runs</th>
+        </thead>
+        <tbody>
+          <td><%= @player.sum_stats(:at_bats) %></td>
+          <td><%= @player.sum_stats(:hits) %></td>
+          <td><%= @player.batting_average %></td>
+          <td><%= @player.sum_stats(:walks) %></td>
+          <td><%= @player.sum_stats(:singles) %></td>
+          <td><%= @player.sum_stats(:doubles) %></td>
+          <td><%= @player.sum_stats(:triples) %></td>
+          <td><%= @player.sum_stats(:home_runs) %></td>
+        </tbody>
+      </table>
+  </section>
+  <section>
+    <h1>Games:</h1>
+    <% @player.games.each do |game| %>
+      <%=  link_to game.opponent, refinery.games_game_path(game) %>
+    <% end %>
+  </section>
+</section>
